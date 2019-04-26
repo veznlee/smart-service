@@ -1,0 +1,156 @@
+/*resetcss*/
+*{margin: 0;padding: 0;border: none;list-style:none;box-sizing: border-box;}
+html {overflow-y: auto;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+td,th,caption { font-size:14px; }
+th{white-space: nowrap}
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#555; text-decoration:none; }
+a:hover { text-decoration:underline; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif;}
+table { border-spacing: 0;border-collapse:collapse; }
+select::-ms-expand { display: none;}
+a,a:hover,a:active,a:link,a:visited{text-decoration: none;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {-webkit-appearance: none;}
+input[type="number"]{-moz-appearance: textfield;}
+/*公用类-常用布局控制*/
+.f-pr{position:relative;}
+.f-prz{position:relative;zoom:1;}
+.f-pa{position:absolute;}
+.f-pa-full{position:absolute;left:0;top:0;right:0;bottom:0;}
+.f-pa-t{position:absolute;top:0;left:0;right:0;}
+.f-pa-b{position:absolute;bottom:0;left:0;right:0;}
+.f-pa-l{position:absolute;left:0;top:0;bottom:0;}
+.f-pa-r{position:absolute;right:0;top:0;bottom:0;}
+.f-full-body{width:100%;height:100%;}
+.f-oh{overflow:hidden;}
+.f-dsn{display:none;}
+.f-hidden{display:none !important;}
+.f-oya{overflow-y: auto;}
+.f-oxa{overflow-x: auto;}
+.f-oyh{overflow-y: hidden;}
+.f-oxh{overflow-x: hidden;}
+.f-ff0{font-family:arial,\5b8b\4f53;}
+.f-ff1{font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53;}
+.f-fs0{font-size:0;}
+.f-fs12{font-size:12px;}
+.f-fs14{font-size:14px;}
+.f-fs16{font-size:16px;}
+.f-fs18{font-size:18px;}
+.f-fwn{font-weight:normal;}
+.f-fwb{font-weight:bold;}
+.f-tal{text-align:left;}
+.f-tac{text-align:center;}
+.f-tar{text-align:right;}
+.f-taj{text-align:justify;text-justify:inter-ideograph;}
+.f-vam,.f-vama *{vertical-align:middle;}
+.f-wsn{word-wrap:normal;white-space:nowrap;}
+.f-pre{overflow:hidden;text-align:left;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;}
+.f-wwb{white-space:normal;word-wrap:break-word;word-break:break-all;}
+.f-ti{overflow:hidden;text-indent:-30000px;}
+.f-ti2{text-indent:2em;}
+.f-lhn{line-height:normal;}
+.f-tdu,.f-tdu:hover{text-decoration:underline;}
+.f-tdn,.f-tdn:hover{text-decoration:none;}
+.f-toe{overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+.f-csp{cursor:pointer;}
+.f-csd{cursor:default;}
+.f-csh{cursor:help;}
+.f-csm{cursor:move;}
+.f-usn{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
+.f-fl{float:left}
+.f-fr{float:right}
+.f-cb::after,.clearfix::after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }
+.f-flex-item{display:-webkit-flex;display:flex;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;}
+.f-flex-item .fix-item{-webkit-box-flex: 1;-webkit-flex: 1;flex:none;}
+.f-flex-item .auto-item{-webkit-box-flex: 1;-webkit-flex: 1;flex:1;}
+.f-flex-item.vertical-center{align-items: center;}
+/*公用类-常用间距控制*/
+.f-mh-0{margin-top:0 !important;margin-bottom:0 !important;}
+.f-mt-0{margin-top:0 !important;}
+.f-mt-10{margin-top:10px !important;}
+.f-mt-15{margin-top:15px !important;}
+.f-mb-0{margin-bottom:0 !important;}
+.f-mb-10{margin-bottom:10px !important;}
+.f-mr-10{margin-right:10px !important;}
+.f-ml-10{margin-left:10px !important;}
+.img-box{font-size:0;}
+/*公用类-常用组件*/
+.van-dialog__message{
+    word-break: break-all;
+}
+.table-bordered {
+    border: 1px solid #ddd;
+}
+.table-bordered td, 
+.table-bordered th{
+    border: 1px solid #ddd;
+}
+.img-box{
+    font-size:0;
+}
+.page-background{
+    background: #f5f8fa;
+}
+.bg-white{
+    background:#fff;
+}
+.white-search-bar {
+    background-color:#fff;
+}
+.white-search-bar .van-cell{
+    background-color:#f5f8fa;
+}
+.page-h-padding{
+    padding-left:15px;
+    padding-right:15px;
+}
+.page-full-screen{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    overflow: hidden;
+}
+.full-fix-bottom{
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 2;
+}
+.full-fix-top{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    z-index: 2;
+}
+.full-absolute-top{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    z-index: 2;
+}
+.full-absolute-left{
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    z-index: 2;
+}
+.fh-full-scroll{
+    height:100%;
+    overflow: auto;
+}
+.fh-full-hidden{
+    height:100%;
+    overflow: hidden;
+}

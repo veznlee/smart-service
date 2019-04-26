@@ -1,0 +1,106 @@
+export default {
+  fileUpload:'bs/uploadFile'// 文件上传
+  ,attachProveFile:'bs/attachmentProveFile'// 保存附件
+  ,downProveFile:'bs/downloadFile'// 下载附件
+  ,proveFileList:'bs/attachmentProveFiles'// 附件列表
+  ,importExcel:'bs/returnExcelFileData'
+  ,jdperson:{
+    list:'bs/personalInfos'
+    ,add:'bs/personalMgrInfo'
+    ,detail:'bs/personalInfo/'
+    ,changeJobState:'bs/personalInfo/'
+    ,importBaseInfo:'bs/personalInfo/importBasicInfo'
+    ,workExperience:'bs/postExperience'
+    ,deleteWorkExperience:'bs/postExperiences/'
+    ,workExperienceList:'bs/postExperiences'
+    ,familyMember:'bs/familyMember'
+    ,deleteFamilyMember:'bs/familyMembers/'
+    ,familyMemberList:'bs/familyMembers'
+    ,attachProveFile:'bs/attachmentProveFile'
+    //奖惩情况
+    ,saveRewardPunish:'bs/rewardPunishment/multi'
+    ,rewardPunishList:'bs/rewardPunishments'
+    ,rewardPunishDetail:'bs/rewardPunishment/'
+    //礼品礼金
+    ,saveRefusedMoney:'bs/refusedMoney/multi'
+    ,refusedMoneyList:'bs/refusedMoneys'
+    ,refusedMoneyDetail:'bs/refusedMoney/'
+    //操办婚丧喜庆事宜
+    ,saveFeastInfo:'bs/feastInfo/multi'
+    ,feastInfoList:'bs/feastInfos'
+    ,feastInfoDetail:'bs/feastInfo/'
+    //投资入股
+    ,saveInvestmentInfo:'bs/investmentInfo/multi'
+    ,investmentInfoList:'bs/investmentInfos'
+    ,investmentInfoDetail:'bs/investmentInfo/'
+    //兼职
+    ,saveParttimeJob:'bs/parttimeJob/multi'
+    ,parttimeJobList:'bs/parttimeJobs'
+    ,parttimeJobDetail:'bs/parttimeJob/'
+    //经办公司
+    ,saveOperateCompany:'bs/operateCompany/multi'
+    ,operateCompanyList:'bs/operateCompanys'
+    ,operateCompanyDetail:'bs/operateCompany/'
+    //谈话询函
+    ,saveChatInfo:'bs/chatInfo/multi'
+    ,chatInfoList:'bs/chatInfos'
+    ,chatInfoDetail:'bs/chatInfo/'
+    //党纪处分
+    ,savePartyPunishment:'bs/partyPunishment/multi'
+    ,partyPunishmentList:'bs/partyPunishments'
+    ,partyPunishmentDetail:'bs/partyPunishment/'
+    //重大事项
+    ,saveMajorIssue:'bs/majorIssue/multi'
+    ,majorIssueList:'bs/majorIssues'
+    ,majorIssueDetail:'bs/majorIssue/'
+    //数据标记作废
+    ,tagDelete:'bs/signatureFiles/'
+    //模板下载
+    ,downloadExcelModal:'file_templates\\廉政档案模板.zip'
+    ,downloadBaseInfoExcel:'file_templates\\1基本情况登记表.xlsx'
+    ,downloadRewardExcel:'file_templates\\4获奖情况表.xlsx'
+    ,downloadPunishExcel:'file_templates/5惩处情况表.xlsx'
+    ,downloadGiftExcel:'file_templates/6拒收或上交礼金、礼品情况登记表.xlsx'
+    ,downloadCompanyExcel:'file_templates/7个人经商办企业情况.xlsx'
+    ,downloadPartJobExcel:'file_templates/8兼职情况.xlsx'
+    ,downloadInvestExcel:'file_templates/9个人投资或入股情况.xlsx'
+    ,downloadWeddingExcel:'file_templates/10操办本人及近亲属婚丧喜庆事宜报告表.xlsx'
+    ,downloadTalkExcel:'file_templates/11纪检谈话函询登记表.xlsx'
+    ,downloadHandleExcel:'file_templates/12组织处理和党政纪处分情况登记表.xlsx'
+    ,downloadMajorExcel:'file_templates/13重大事项报告表.xlsx'
+  },
+  // 导入excel表时的参数值和签字文件类型值
+  importTy:{
+    reward:1,
+    punish:2,
+    lplj:3,
+    company:4,
+    partJob:5,
+    invest:6,
+    hsxq:7,
+    thhx:8,
+    clcf:9,
+    zdsx:10
+  },
+  glperson:{
+    list:'bs/personalMgrInfos'
+    ,import:'bs/personalMgrInfo/importBasicInfo'
+    ,add:'bs/personalMgrInfo'
+    ,delete:'bs/personalMgrInfos/'
+    ,detail:'bs/personalMgrInfo/'
+    ,changeJobState:'bs/personalMgrInfo/'
+    // 系统用户列表
+    ,userList:'sys/users/select'
+  },
+  manageaccount:{
+    list:'bs/mgrStatementAccountss'
+    ,add:'bs/mgrStatementAccounts'
+    ,delete:'bs/mgrStatementAccounts/'
+    ,detail:'bs/mgrStatementAccounts/'
+    // 建档人员列表
+    ,userList:'bs/personalInfos'
+  },
+  operatelog:{
+    list:'sys/operationLogs'
+  }
+}

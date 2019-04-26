@@ -1,0 +1,53 @@
+export default {
+  user:{
+    add:'sys/user',
+    //删除，停用
+    delete:'sys/users/',
+    enable:'sys/user/enable/',
+    unLock:'sys/user/unLock/',
+    rePass:'sys/user/resetPwd/',
+    detail:'',
+    list:'sys/users',
+    // 角色查看添加
+    roleDetail:'sys/userRoles/select/',
+    roleSave:'sys/userRole',
+    updatePassword:'sys/user/modifyPwd'
+  },
+  role:{
+    add:'sys/role',
+    delete:'sys/roles/',
+    detail:'',
+    list:'sys/roles',
+    // 权限查看添加
+    permissionDetail:'sys/permissions/tree/',
+    permissionSave:'sys/rolePermission',
+    //部门树
+    tree:'sys/departments/tree'
+  },
+  permission:{
+    add:'',
+    delete:'',
+    detail:'',
+    list:''
+  },
+  depart:{
+    add:'sys/department',
+    delete:'sys/departments/',
+    detail:'',
+    list:'sys/departments',
+    tree:'sys/departments/tree'
+  },
+  menu:{
+    add:'sys/menu',
+    delete:'sys/menus/',
+    detail:'',
+    list:'sys/menus',
+    tree:'sys/menus/tree'
+  },
+  dictionary:{
+    add:'',
+    delete:'',
+    detail:'',
+    list:''
+  }
+}

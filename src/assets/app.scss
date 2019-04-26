@@ -1,0 +1,717 @@
+::-webkit-scrollbar-track{
+  background-color:#F5F5F5;
+  box-shadow:inset 0 0 3px #ccc;
+}
+::-webkit-scrollbar{
+  width:6px;
+  height:10px;
+  background-color:#aaa;
+}
+::-webkit-scrollbar-thumb{
+  background-color:#ccc;
+  border-radius:3px;
+}
+/*顶部导航*/
+.module-top-nav-container{
+  min-width:1570px;
+  position: relative;
+  padding-top: 84px;
+}
+/*主体架构*/
+.home-frame{
+  padding-top:50px;
+  padding-left:232px;
+  background:rgba(18,20,42,1);
+}
+.home-frame-top{
+  height:50px;
+}
+.home-frame-left{
+  width:232px;
+}
+.home-frame-body{
+  background:rgba(26,29,54,1);
+}
+.frame-left-wrap{
+  height:100%;
+  padding-top:224px;
+  .wrap-header{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:224px;
+    padding-top:40px;
+    h1{
+      width: 130px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #27AAFF;
+    }
+    .user-info{
+      text-align: center;
+      .user-header{
+        width:36px;
+        height:36px;
+        margin:20px auto 10px;
+        overflow:hidden;
+      }
+      img{
+        width:100%;
+        height:100%;
+      }
+      .user-name{
+        font-size:12px;
+        font-family:MicrosoftYaHei;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        height:20px;
+        line-height: 20px;
+      }
+      .user-about{
+        height:20px;
+        line-height: 20px;
+      }
+      .login-out{
+        font-size:18px;
+        color:#fee;
+        cursor: pointer;
+      }
+    }
+  }
+  .wrap-main{
+    height:100%;
+    overflow-x: hidden;
+    .nav-container{
+      height:100%;
+      width:249px;
+      overflow-y:auto; 
+    }
+  }
+}
+
+$moduleNavColor:#e9f0f3;
+$moduleNavActiveColor:#74C2FF;
+.module-nav-box{
+  list-style: none;
+  color: #515a6e;
+  font-size: 14px;
+  position: relative;
+  z-index: 900;
+  height:auto;
+  transition: height .3s ease-in;
+  .sub-nav-title{
+    height:34px;
+    line-height: 34px;
+    padding-left:7px;
+    color:$moduleNavColor;
+    cursor: pointer;
+    .nav-icon{
+      margin:0 6px;
+    }
+    .nav-arrow{
+      transition: transform 0.3s ease-in-out;
+      &.is-open{
+        transform: rotateZ(-90deg);
+      }
+    }
+  }
+  .sub-nav-item{
+    height:34px;
+    line-height: 34px;
+    padding-left:48px;
+    cursor: pointer;
+    .text-title{
+      display: inline-block;
+      position:relative;
+      color:$moduleNavColor;
+      &::before{
+        content:'';
+        position: relative;
+        display:inline-block;
+        width:7px;
+        height:7px;
+        background:$moduleNavColor;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+    }
+    &.active{
+      background:rgba(39,43,76,1);
+      .text-title{
+        color:$moduleNavActiveColor;
+        &::before{
+          background:$moduleNavActiveColor;
+        }
+      }
+    }
+  }
+}
+.module-nav-box.is-close{
+  height:0;
+  overflow: hidden;
+}
+.module-top-nav{
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:84px;
+  background:#108ff5;
+  color:#fff;
+  .nav-inner{
+    width:1560px;
+    margin:0 auto;
+  }
+  .nav-head{
+    float:left;
+    width:300px;
+    padding:20px 0;
+    .icon-box{
+      float:left;
+      width:40px;
+      height:40px;
+      padding:5px 0;
+      line-height:30px;
+    }
+    .text{
+      display:inline-block;
+      height:40px;
+      margin-left: 20px;
+      line-height: 40px;
+      font-size:26px;
+      font-weight:bold;
+    }
+    .app-icon-index{
+      display:inline-block;
+      width:30px;
+      height:30px;
+      background:url(./img/app-icon-index.png) no-repeat;
+      background-size:100% 100%;
+    }
+  }
+  .nav-body{
+    float:left;
+    width:1260px;
+  }
+}
+.module-nav-list{
+  font-size:0;
+  text-align: right;
+  .nav-item{
+    display:inline-block;
+    padding:26px;
+    height:84px;
+    margin:0 25px;
+    font-size:24px;
+    color:#fff;
+    line-height:28px;
+    border-bottom:4px solid transparent;
+    // &:last-child{
+    //   margin-right:0;
+    // }
+    &.router-link-active{
+      border-bottom:4px solid #fff;
+      background-color: #0786EB;
+    }
+  }
+}
+.module-page-footer{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:100;
+  height:36px;
+  line-height: 36px;
+  font-size: 14px;
+  color:#666;
+  text-align: center;
+  background:#F2F2F2;
+}
+
+.text-danger{
+  color:#ed4014;
+}
+.text-success{
+  color:#19be6b;
+}
+/*分页页面架构*/
+.table-page-wrap{
+  padding:26px 0;
+  margin:0 auto;
+  width:1560px;
+  .search-line{
+    padding:15px 0;
+    .search-inline-item{
+      float:left;
+      margin:5px 30px 5px 0;
+    }
+    .search-btn{
+      margin-top:5px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .operate-line{
+    padding:16px 0;
+    .ivu-btn-large{
+      margin-right:30px;
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-top: 4px;
+      height:46px;
+      font-size: 20px;
+    }
+  }
+  .table-container{
+
+  }
+  .pagination-container{
+    margin-top:50px;
+    text-align:center;
+    .ivu-page-item-active{
+      background-color: #108ff5;
+    }
+    .ivu-page-item-active a, .ivu-page-item-active:hover a{
+      color: #fff;
+    }
+  }
+}
+.search-inline-item{
+  .item-label{
+    float: left;
+    height:32px;
+    line-height: 32px;
+    padding-right:15px;
+    font-size:18px;
+    color:#333;
+  }
+  .commom-input{
+    float: left;
+    width:200px;
+  }
+  .ivu-input{
+    font-size:16px;
+  }
+  .ivu-select-single .ivu-select-selection .ivu-select-placeholder, 
+  .ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+    font-size: 16px;
+  }
+}
+
+.bold-table-header th .ivu-table-cell{
+  font-weight: bold;
+}
+.excel-img-container{
+  display: flex;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  align-items: center;
+  img{
+    margin:0 auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+/*左侧导航*/
+.nav-tab-container{
+  background:#108ff5;
+  .tab-header{
+    height:88px;
+    padding:20px 0 20px 26px;
+    line-height: 44px;
+    font-size:24px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .nav-tab{
+    .tab-item{
+      height:60px;
+      padding-left:26px;
+      line-height: 60px;
+      font-size:20px;
+      color:#fff;
+      cursor: pointer;
+      &.active{
+        background:#0183eb;
+      }
+      &.disabled{
+        opacity:0.5;
+        cursor:not-allowed;
+      }
+    }
+  }
+}
+
+
+/*表格卡片*/
+.module-table-card{
+  &+.module-table-card{
+    margin-top:40px;
+  }
+  .card-header{
+    height:48px;
+    margin-bottom:13px;
+    .title{
+      float:left;
+      line-height: 48px;
+      font-size:24px;
+      color:#171A29;
+    }
+    .title-tip{
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 16px;
+      color: #999;
+    }
+    
+    .btn-box{
+      float:right;
+      text-align: right;
+      .ivu-btn-large{
+        width:140px;
+        padding-top: 4px;
+        height: 48px;
+        margin-left:32px;
+        font-size:20px;
+      }
+    }
+  }
+
+  .ivu-tabs-bar{
+    margin-bottom:5px;
+  }
+  td .ivu-btn + .ivu-btn{
+    margin-left:5px;
+  }
+}
+.table-default{
+  width:100%;
+  table-layout: fixed;
+}
+.table-default td{
+  padding:10px 18px;
+  border: 1px solid #e8eaec;
+  text-align: center;
+  font-size:18px;
+  color:#333;
+}
+.table-default td.bg-gray{
+  background:#f8f8f8;
+}
+.input-hidden-table{
+  .ivu-input,
+  .ivu-input:focus,
+  .ivu-select-selection{
+    border:none;
+    outline: none;
+    box-shadow: none;
+    font-size:18px;
+  }
+  .ivu-select-single .ivu-select-selection .ivu-select-placeholder, 
+  .ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+    font-size:18px;
+  }
+  .ivu-select-item{
+    font-size: 16px !important;
+  }
+}
+.ivu-table-body tr.index-is-odd td{
+  background-color: #fff;
+}
+.ivu-table-body tr.index-is-odd td{
+  background-color: #f4f8fb;
+}
+
+/*文件上传按钮*/
+.forge-upload-btn{
+  display:block;
+  position: relative;
+  input[type='file']{
+    display: none;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    background: transparent;
+    font-size:0;
+    border:0;
+    outline:0;
+    cursor: pointer;
+  }
+}
+.form-inline-upload{
+  display: flex;
+  .forge-upload-btn{
+    flex:0;
+  }
+  .upload-result{
+    flex:1;
+    padding-top:5px;
+    padding-left:15px;
+    span{
+      display:inline-block;
+      padding:5px;
+    }
+  }
+}
+/*图片预览*/
+.ivu-modal-wrap.view-img-modal{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.view-img-modal .ivu-modal-footer{
+  display: none;
+}
+.view-img-modal{
+  .ivu-modal{
+    top:0;
+  }
+  .ivu-modal,
+  .ivu-modal-content,
+  .ivu-modal-body{
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    padding:0;
+  }
+  .ivu-modal-content{
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .ivu-modal-body{
+    font-size:0;
+  }
+  .ivu-modal-close .ivu-icon-ios-close{
+    color:#fff;
+    font-weight: bold;
+  }
+} 
+
+/*左侧树菜单页面*/
+.module-tree-page{
+  position:relative;
+  .tree-page-inner{
+    height: 100%;
+    width: 1560px;
+    margin: 0 auto;
+    padding: 10px 0;
+    padding-left: 254px;
+    .tree-container{
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      padding-top:30px;
+      padding-bottom:50px;
+      width: 254px;
+      .tree-box{
+        width:100%;
+        height:100%;
+        max-height: 800px;
+        padding-left:10px;
+        border:1px solid #dcdee2;
+        overflow: auto;
+      }
+      .ivu-tree ul{
+        font-size:14px;
+      }
+    }
+    .tree-out{
+      padding: 15px 35px 30px;
+      height: 100%;
+      overflow: auto;
+      .table-page-wrap{
+        padding:0;
+        width:100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-height:800px){
+  .module-tree-page .tree-page-inner .tree-container{
+    padding-bottom:30px;
+  }
+}
+
+@media screen and (max-height:750px){
+  .module-tree-page .tree-page-inner .tree-container{
+    padding-bottom:10px;
+  }
+}
+
+@media screen and (max-width:1919px) and (min-width:1660px){
+  .login-page{
+    padding-right: 40px;
+  }
+}
+
+/*选择列表*/
+.select-liest-wrap{
+  border: 1px solid #e8eaec;
+  .select-list-item{
+    padding: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    &:hover{
+      background: #f9f9f9;
+    }
+    &.active,&.active:hover{
+      background: #e8eaec;
+    }
+  }
+}
+
+/*下载链接*/
+.inline-down-link{
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 10px;
+}
+.select-fs18 .ivu-select-input{
+  font-size:18px;
+}
+.ivu-btn.btn-primary-nohover{
+  color: #57a3f3;
+  background-color: white;
+  border-color: #57a3f3;
+  &:hover,
+  &:active{
+    color: #57a3f3;
+    background-color: white;
+    border-color: #57a3f3;
+  }
+  &:focus{
+    box-shadow: none;
+  }
+}
+.ivu-btn.btn-default-nohover{
+  color: #515a6e;
+  background-color: #fff;
+  border-color: #dcdee2;
+  &:hover,
+  &:active{
+    color: #515a6e;
+    background-color: #fff;
+    border-color: #dcdee2;
+  }
+  &:focus{
+    box-shadow: none;
+  }
+}
+.common-tooltip-wrap{
+  .common-tooltip-arrow{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    &::after{
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+      content: "";
+      border-width: 7px;
+    }
+  }
+  &[x-placement="top"] {
+    .common-tooltip-arrow{
+      left: 50%;
+      margin-left: -7px;
+    }
+  }
+  &[x-placement^="top"]{
+    padding-bottom:10px;
+    .common-tooltip-arrow{
+      bottom: 3px;
+      border-width: 7px 7px 0;
+      border-top-color: hsla(0, 0%, 85%, 0.5);
+      &::after {
+        content: " ";
+        bottom: 1px;
+        margin-left: -7px;
+        border-bottom-width: 0;
+        border-top-width: 7px;
+        border-top-color: #fff;
+      }
+    }
+  }
+  &[x-placement="top-left"]{
+    .common-tooltip-arrow{
+      left:3px;
+    }
+  }
+  .common-tooltip-text{
+    max-width: 250px;
+    min-height: 34px;
+    padding: 8px 12px;
+    text-align: left;
+    text-decoration: none;
+    background-color: #fff;
+    color: #515a6e;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// 4.3修改对话框样式
+.ivu-modal{
+  .ivu-modal-header .ivu-modal-header-inner{
+    font-size: 18px;
+  }
+  .select-liest-wrap .select-list-item{
+    font-size: 16px;
+  }
+  .ivu-btn-large{
+    font-size: 18px;
+    padding: 2px 15px 2px 15px;
+  }
+  .ivu-modal-footer button + button{
+    margin-left: 16px;
+  }
+  label.ivu-form-item-label{
+    font-size: 14px;
+  }
+  .ivu-tree ul li{
+    font-size: 14px;
+  }
+}
+
+//操作确认框
+.ivu-modal-confirm.operate-confirm{
+  .ivu-modal-confirm-head-title{
+    font-size: 18px;
+  }
+  .ivu-modal-confirm-body{
+    font-size: 16px;
+  }
+  button.btn-confirm{
+    color: #47adff;
+  }
+  button.btn-confirm:hover{
+    color: #268bdc;
+  }
+  button.btn-cancel:hover{
+    color: #333;
+  }
+  .ivu-btn-text{
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
